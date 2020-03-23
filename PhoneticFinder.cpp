@@ -104,16 +104,18 @@ if(x>=text.size()){
 
     return ans;
 }
-//int main() {
-//    string text = "Dond vorri be haffy dont";
-//    cout << phonetic::find(text, "dont") << endl;   // should print "Dond"
-//    cout << phonetic::find(text, "worry") << endl;   // should print "vorri"
-//    cout << phonetic::find(text, "Be") << endl;   // should print "be"
-//    cout << phonetic::find(text, "happy") << endl;   // should print "haffy"
-//    try {
-//        cout << phonetic::find(text, "happ") << endl;   // should throw an exception - "happ" is not a full word in the sentence
-//    } catch (exception ex) {
-//        cout << "Did not find the word in the text " << ex.what() << endl;  // should print "Did not find the word 'happ' in the text"
-//    }
-//    return 0;
-//}
+/*
+int main() {
+    string text = "Dond vorri be haffy dont smile";
+    cout << phonetic::find(text, "zmile") << endl;   // should print "Dond"
+    cout << phonetic::find(text, "worry") << endl;   // should print "vorri"
+    cout << phonetic::find(text, "Be") << endl;   // should print "be"
+    cout << phonetic::find(text, "happy") << endl;   // should print "haffy"
+    try {
+        cout << phonetic::find(text, "happ") << endl;   // should throw an exception - "happ" is not a full word in the sentence
+    } catch (exception ex) {
+        cout << "Did not find the word in the text " << ex.what() << endl;  // should print "Did not find the word 'happ' in the text"
+    }
+    return 0;
+}
+*/
