@@ -8,16 +8,16 @@ bool phonetic::simalar(char x,char y) {
     if (x==y){
         return true;
     }
-    if ((((x == 'v' || x=='V')) && (y == 'w')) || (((x == 'w' || x=='W')) && (y == 'v'))) {
+    if ((((x == 'v' || x=='V')) && (y == 'w'|| y=='W')) || (((x == 'w' || x=='W')) && (y == 'v'|| y=='V'))) {
         return true;
     }
-    if ((((x == 'b'||x=='B')) && (y == 'p'))|| ((x == 'p' || x=='P') && (y =='b'))) {
+    if ((((x == 'b'||x=='B')) && (y == 'p' || y=='P'))|| ((x == 'p' || x=='P') && (y =='b'|| y=='B'))) {
         return true;
     }
-     if((((x == 'b'|| x=='B')) && (y == 'f')) || (((x == 'f'||x=='F')) && (y == 'b'))){
+     if((((x == 'b'|| x=='B')) && (y == 'f'|| y=='F')) || (((x == 'f'||x=='F')) && (y == 'b'|| y=='B'))){
         return true;
     }
-    if ((((x == 'f'||x=='F')) && (y == 'p'))|| (((x == 'p'||x=='P')) && (y =='f'))) {
+    if ((((x == 'f'||x=='F')) && (y == 'p' || y=='P'))|| (((x == 'p'||x=='P')) && (y =='f'|| y=='F'))) {
         return true;
     }
     if (((((x == 'g'||x=='G')) && (y == 'j'|| y=='J'))|| ((x == 'j'|| x=='J') && (y =='g'||y=='G')))) {
@@ -70,21 +70,24 @@ bool phonetic::simalar(char x,char y) {
     int x=0;
     int i=0,j=0;
     string ans="";
+    if(word==""){
+        throw exception();
+    }
     if(is_Same_Word(text,word).size()>=1){
       //  cout<<is_Same_Word(text,word).size()<<endl;
         return is_Same_Word(text,word);
     }
     while (i<text.size() )
     {
-        if (simalar(text[i],word[j])){
+        if (simalar(text[i],word[j]) && text[i]!=' '){
             ans+=text[i];
             i++;
             j++;
             x=i;
         } else{
-            if (j>word.size()){
-                return ans;
-            }
+            if (j>=word.size()) {
+                    return ans;
+                }
             j=0;
             ans="";
             while (text[i]!=' '){
@@ -100,22 +103,38 @@ if(x>=text.size()){
     for (int k = 0; k <ans.size()-1 ; ++k) {
         ans[k]=ans[k];
     }
-}
+    bool flag= false;
+    if (wordWithSpace(word)){
+        for (int f = 0; f <word.size()-1 ; ++f) {
+            ans[f]=ans[f];
+        }
 
-    return ans;
-}
-/*
-int main() {
-    string text = "Dond vorri be haffy dont smile";
-    cout << phonetic::find(text, "zmile") << endl;   // should print "Dond"
-    cout << phonetic::find(text, "worry") << endl;   // should print "vorri"
-    cout << phonetic::find(text, "Be") << endl;   // should print "be"
-    cout << phonetic::find(text, "happy") << endl;   // should print "haffy"
-    try {
-        cout << phonetic::find(text, "happ") << endl;   // should throw an exception - "happ" is not a full word in the sentence
-    } catch (exception ex) {
-        cout << "Did not find the word in the text " << ex.what() << endl;  // should print "Did not find the word 'happ' in the text"
     }
-    return 0;
 }
-*/
+        return ans;
+}
+bool phonetic::wordWithSpace(string word){
+    bool flag= false;
+    for (int i = 0; i <word.size() ; ++i) {
+        if (word[i]==' '){
+            cout<<i;
+            return true;
+        }
+    }
+    return false;
+
+}
+//int main() {
+//    string text = "Dond worry be haffy dont smile bff";
+//    cout << phonetic::find(text, "PPP") << endl;   // should print "Dond"
+//    cout << phonetic::find(text, "worry") << endl;   // should print "vorri"
+//    cout << phonetic::find(text, "Be") << endl;   // should print "be"
+//    cout << phonetic::find(text, "happy").size()<< endl;   // should print "haffy"
+//    try {
+//        cout << phonetic::find(text, "happ") << endl;   // should throw an exception - "happ" is not a full word in the sentence
+//    } catch (exception ex) {
+//        cout << "Did not find the word in the text " << ex.what() << endl;  // should print "Did not find the word 'happ' in the text"
+//    }
+//    return 0;
+//}
+//
