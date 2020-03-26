@@ -89,7 +89,12 @@ bool phonetic::simalar(char x,char y) {
             x=i;
         } else{
             if (j>=word.size()) {
+                if (text[i+1]!=' ')
                     return ans;
+                else{
+                    throw out_of_range("this word not in text");
+
+                }
                 }
             j=0;
             ans="";

@@ -7,6 +7,8 @@ using namespace std;
 
 TEST_CASE("Test replacement of p and b") {
     string text = "xxx happy yyy";
+    string anyWord ="xx";
+            CHECK_THROWS_AS( find(text, anyWord), std::exception );
             CHECK(find(text,"hAppy") ==string("happy"));
             CHECK(string(find(text, "HAPPY")) == string("happy"));
             CHECK(find(text, "habby") == string("happy"));
@@ -137,9 +139,4 @@ TEST_CASE("Test for java") {
             CHECK(find(text, "YUU") == string("YOU"));
             CHECK(find(text, "YUu") == string("YOU"));
 
-}
-TEST_CASE("Test for Bfp") {
-    string text = " AAA  CCC YOU aRe Bfp Ediut bed boy";
-            CHECK(find(text,"PPB") == string("BfP"));
-            CHECK(find(text,"PPb") == string("BfP"));
 }
