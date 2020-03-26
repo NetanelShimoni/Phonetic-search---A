@@ -71,7 +71,7 @@ bool phonetic::simalar(char x,char y) {
     int i=0,j=0;
     string ans="";
     if(word=="" || word==" "){
-        throw out_of_range("this word not in text");
+        throw std::exception();
     }
     if(is_Same_Word(text,word).size()>=1){
         string ans_same=is_Same_Word(text,word);
@@ -92,7 +92,7 @@ bool phonetic::simalar(char x,char y) {
                 if (text[i+1]!=' ')
                     return ans;
                 else{
-                    throw out_of_range("this word not in text");
+                    throw std::exception();
 
                 }
                 }
@@ -101,7 +101,7 @@ bool phonetic::simalar(char x,char y) {
             while (text[i]!=' '){
                 i++;
                 if (i>text.size()){
-                    throw out_of_range("this word not in text");
+                    throw std::exception();
                 }
             }
             i++;
