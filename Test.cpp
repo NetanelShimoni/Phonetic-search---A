@@ -7,7 +7,7 @@ using namespace std;
 
 TEST_CASE("Test replacement of p and b") {
     string text = "xxx happy yyy";
-    string anyWord ="xx";
+    string anyWord =" ";
             CHECK_THROWS_AS( find(text, anyWord), std::exception );
             CHECK(find(text,"hAppy") ==string("happy"));
             CHECK(string(find(text, "HAPPY")) == string("happy"));

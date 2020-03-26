@@ -71,7 +71,8 @@ bool phonetic::simalar(char x,char y) {
     int i=0,j=0;
     string ans="";
     if(word=="" || word==" "){
-        throw std::exception();
+        __throw_out_of_range("");
+//        throw std::exception();
     }
     if(is_Same_Word(text,word).size()>=1){
         string ans_same=is_Same_Word(text,word);
