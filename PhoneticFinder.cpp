@@ -74,8 +74,11 @@ bool phonetic::simalar(char x,char y) {
         throw exception();
     }
     if(is_Same_Word(text,word).size()>=1){
-      //  cout<<is_Same_Word(text,word).size()<<endl;
-        return is_Same_Word(text,word);
+        string ans_same=is_Same_Word(text,word);
+      if(ans_same==word){
+          return ans_same;
+      }
+
     }
     while (i<text.size() )
     {
@@ -124,17 +127,25 @@ bool phonetic::wordWithSpace(string word){
     return false;
 
 }
-//int main() {
-//    string text = "Dond worry be haffy dont smile bff";
-//    cout << phonetic::find(text, "PPP") << endl;   // should print "Dond"
-//    cout << phonetic::find(text, "worry") << endl;   // should print "vorri"
-//    cout << phonetic::find(text, "Be") << endl;   // should print "be"
-//    cout << phonetic::find(text, "happy").size()<< endl;   // should print "haffy"
-//    try {
-//        cout << phonetic::find(text, "happ") << endl;   // should throw an exception - "happ" is not a full word in the sentence
-//    } catch (exception ex) {
-//        cout << "Did not find the word in the text " << ex.what() << endl;  // should print "Did not find the word 'happ' in the text"
-//    }
-//    return 0;
-//}
-//
+int main() {
+    string text1 = " AAA  CCC YOU aRe Bfp iy Ediut bed boy";
+  /*  cout<<phonetic::find(text1,"PPB")<<endl; //== string("BfP"));
+    cout<<phonetic::find(text1,"PPb") <<endl;//== string("BfP"));*/
+    cout<<phonetic::find(text1, "yy")<<endl;// == string("iy") )
+    //////////////////////////////////////////////////////////////////////
+    string text = "Dond worry be BfP haffy dont smile bff";
+    cout << phonetic::find(text, "PPP") << endl;   // should print "Dond"
+    cout << phonetic::find(text, "worry") << endl;   // should print "vorri"
+    cout << phonetic::find(text, "Be") << endl;   // should print "be"
+    cout << phonetic::find(text, "happy")<< endl;   // should print "haffy"
+    cout<<phonetic::find(text, "PPB")<<endl;// == string("BfP") )
+    try {
+        cout << phonetic::find(text, "happ") << endl;   // should throw an exception - "happ" is not a full word in the sentence
+    } catch (exception ex) {
+        cout << "Did not find the word in the text " << ex.what() << endl;  // should print "Did not find the word 'happ' in the text"
+    }
+
+
+    return 0;
+}
+

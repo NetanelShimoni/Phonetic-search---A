@@ -138,3 +138,8 @@ TEST_CASE("Test for java") {
             CHECK(find(text, "YUu") == string("YOU"));
 
 }
+TEST_CASE("Test for Bfp") {
+    string text = " AAA  CCC YOU aRe Bfp Ediut bed boy";
+            CHECK(find(text,"PPB") == string("BfP"));
+            CHECK(find(text,"PPb") == string("BfP"));
+}
