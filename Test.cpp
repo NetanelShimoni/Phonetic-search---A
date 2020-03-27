@@ -29,6 +29,7 @@ TEST_CASE("Test replacement of b and p") {
             CHECK(find(text, "VorrI") == string("worry"));
             CHECK(find(text, "VORRI") == string("worry"));
             CHECK(find(text, "VORrI") == string("worry"));
+
 }
 TEST_CASE("Test for dont") {
     string text ="dont abcdef be happy";
