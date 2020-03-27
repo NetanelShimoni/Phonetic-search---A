@@ -248,6 +248,15 @@ bool phonetic::simalar(char x,char y) {
     if(word.size()> text.size()){
         throw std::exception();
     }
+        bool flag= true;
+        for (int m = 0; m <text.size() ; ++m) {
+            if(text[m]!=' '){
+                flag=false;
+            }
+        }
+        if (flag){
+            throw std::exception();
+        }
     string ans="";
     if(word=="" || word==" "){
         __throw_out_of_range("");
