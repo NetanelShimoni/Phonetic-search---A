@@ -318,35 +318,35 @@ bool phonetic::wordWithSpace(string word){
 
 
 
-int main() {
-
-
-    string text4 = "             yiyihe        yiyiheysayio                 yiyiheysayios                                        ";
-    cout<<phonetic::find(text4, "yiyiheysayios")<<endl;
-
-
-    string text1 = "AAA  CCC YOU aRe Bfp iy Ediut bed boy";
-
-   // phonetic::find(text1,"DDDDD");
-  /*  cout<<phonetic::find(text1,"PPB")<<endl; //== string("BfP"));
-    cout<<phonetic::find(text1,"PPb") <<endl;//== string("BfP"));*/
-    cout<<phonetic::find(text1, "yy")<<endl;// == string("iy") )
-    //////////////////////////////////////////////////////////////////////
-    string text = "Dond worry be BfP haffy dont smile bff";
-    cout << phonetic::find(text, "PPP") << endl;   // should print "Dond"
-    cout << phonetic::find(text, "worry") << endl;   // should print "vorri"
-    cout << phonetic::find(text, "Be") << endl;   // should print "be"
-    cout << phonetic::find(text, "happy")<< endl;   // should print "haffy"
-    cout<<phonetic::find(text, "PPB")<<endl;// == string("BfP") )
-    try {
-        cout << phonetic::find(text, "happ") << endl;   // should throw an exception - "happ" is not a full word in the sentence
-    } catch (exception ex) {
-        cout << "Did not find the word in the text " << ex.what() << endl;  // should print "Did not find the word 'happ' in the text"
-    }
-    string antword= "eima i love you";
-    cout<< phonetic::find(antword,"")<<endl;
-
-
-    return 0;
-}
-
+//int main() {
+//
+//
+//    string text4 = "             yiyihe        yiyiheysayio                 yiyiheysayios                                        ";
+//    cout<<phonetic::find(text4, "yiyiheysayios")<<endl;
+//
+//
+//    string text1 = "AAA  CCC YOU aRe Bfp iy Ediut bed boy";
+//
+//   // phonetic::find(text1,"DDDDD");
+//  /*  cout<<phonetic::find(text1,"PPB")<<endl; //== string("BfP"));
+//    cout<<phonetic::find(text1,"PPb") <<endl;//== string("BfP"));*/
+//    cout<<phonetic::find(text1, "yy")<<endl;// == string("iy") )
+//    //////////////////////////////////////////////////////////////////////
+//    string text = "Dond worry be BfP haffy dont smile bff";
+//    cout << phonetic::find(text, "PPP") << endl;   // should print "Dond"
+//    cout << phonetic::find(text, "worry") << endl;   // should print "vorri"
+//    cout << phonetic::find(text, "Be") << endl;   // should print "be"
+//    cout << phonetic::find(text, "happy")<< endl;   // should print "haffy"
+//    cout<<phonetic::find(text, "PPB")<<endl;// == string("BfP") )
+//    try {
+//        cout << phonetic::find(text, "happ") << endl;   // should throw an exception - "happ" is not a full word in the sentence
+//    } catch (exception ex) {
+//        cout << "Did not find the word in the text " << ex.what() << endl;  // should print "Did not find the word 'happ' in the text"
+//    }
+//    string antword= "eima i love you";
+//    cout<< phonetic::find(antword,"")<<endl;
+//
+//
+//    return 0;
+//}
+//
